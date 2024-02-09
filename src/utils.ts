@@ -17,7 +17,7 @@ export const saveData = async (file: string, data: unknown) => {
 };
 
 type LoadData = {
-  <T>(file: unknown, schema: z.ZodType<T>): T;
+  <T>(file: unknown, schema: ZodSchema<T>): T;
 };
 
 export const loadData: LoadData = (file, schema) => {
