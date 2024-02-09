@@ -1,12 +1,19 @@
 {
+  "name": "indonesia-code",
+  "version": "0.0.1",
+  "private": "false",
+  "description": "A simple library to get Indonesia's province, city, and district code",
+  "keywords": ["indonesia", "code", "province", "city", "district"],
+  "author": {
+    "name": "Zakiego",
+    "url": "https://zakiego.com"
+  },
   "scripts": {
     "pull": "NODE_TLS_REJECT_UNAUTHORIZED=0 tsx src/data/pull.ts",
     "test": "vitest"
   },
   "type": "module",
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "main": "./dist/cjs/index.js",
   "module": "./dist/es/index.mjs",
   "types": "./dist/cjs/index.d.ts",
