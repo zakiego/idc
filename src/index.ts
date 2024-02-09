@@ -10,10 +10,10 @@ import {
   KabupatenKota,
   Kecamatan,
   Provinsi,
-  schemaDesaKelurahan,
-  schemaKabupatenKota,
-  schemaKecamatan,
-  schemaProvinsi,
+  desaKelurahanSchema,
+  kabupatenKotaSchema,
+  kecamatanSchema,
+  provinsiSchema,
 } from "@/types";
 import { loadData } from "@/utils";
 
@@ -24,7 +24,7 @@ type KodeKecamatan = `${number}${number}.${number}${number}.${number}${number}`;
 type GetListProvinsi = () => Provinsi;
 
 export const getListProvinsi: GetListProvinsi = () => {
-  const data = loadData(provinsiData, schemaProvinsi);
+  const data = loadData(provinsiData, provinsiSchema);
   return data;
 };
 
@@ -34,7 +34,7 @@ type GetListKabupatenKotaProps = {
 type GetListKabupatenKota = (props: GetListKabupatenKotaProps) => KabupatenKota;
 
 export const getListKabupatenKota: GetListKabupatenKota = (props) => {
-  const data = loadData(kabupatenKotaData, schemaKabupatenKota);
+  const data = loadData(kabupatenKotaData, kabupatenKotaSchema);
 
   let find: KabupatenKota = [];
 
@@ -62,7 +62,7 @@ type GetListKecamatanProps =
 type GetListKecamatan = (props: GetListKecamatanProps) => Kecamatan;
 
 export const getListKecamatan: GetListKecamatan = (props) => {
-  const data = loadData(kecamatanData, schemaKecamatan);
+  const data = loadData(kecamatanData, kecamatanSchema);
 
   let find: Kecamatan = [];
 
@@ -95,7 +95,7 @@ type GetListDesaKelurahanProps =
 type GetListDesaKelurahan = (props: GetListDesaKelurahanProps) => DesaKelurahan;
 
 export const getListDesaKelurahan: GetListDesaKelurahan = (props) => {
-  const data = loadData(desaKelurahanData, schemaDesaKelurahan);
+  const data = loadData(desaKelurahanData, desaKelurahanSchema);
 
   let find: DesaKelurahan = [];
 

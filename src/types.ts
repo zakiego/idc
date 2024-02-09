@@ -1,20 +1,27 @@
 import { z } from "zod";
 
-export const schemaProvinsi = z.array(
+export const provinsiSchema = z.array(
   z.object({ kode_provinsi: z.string(), nama_provinsi: z.string() }),
 );
-export type Provinsi = z.infer<typeof schemaProvinsi>;
+export type Provinsi = {
+  kode_provinsi: string;
+  nama_provinsi: string;
+}[];
 
-export const schemaKabupatenKota = z.array(
+export const kabupatenKotaSchema = z.array(
   z.object({
     kode_provinsi: z.string(),
     kode_kabupaten_kota: z.string(),
     nama_kabupaten_kota: z.string(),
   }),
 );
-export type KabupatenKota = z.infer<typeof schemaKabupatenKota>;
+export type KabupatenKota = {
+  kode_provinsi: string;
+  kode_kabupaten_kota: string;
+  nama_kabupaten_kota: string;
+}[];
 
-export const schemaKecamatan = z.array(
+export const kecamatanSchema = z.array(
   z.object({
     kode_provinsi: z.string(),
     kode_kabupaten_kota: z.string(),
@@ -22,9 +29,14 @@ export const schemaKecamatan = z.array(
     nama_kecamatan: z.string(),
   }),
 );
-export type Kecamatan = z.infer<typeof schemaKecamatan>;
+export type Kecamatan = {
+  kode_provinsi: string;
+  kode_kabupaten_kota: string;
+  kode_kecamatan: string;
+  nama_kecamatan: string;
+}[];
 
-export const schemaDesaKelurahan = z.array(
+export const desaKelurahanSchema = z.array(
   z.object({
     kode_provinsi: z.string(),
     kode_kabupaten_kota: z.string(),
@@ -33,4 +45,10 @@ export const schemaDesaKelurahan = z.array(
     nama_desa_kelurahan: z.string(),
   }),
 );
-export type DesaKelurahan = z.infer<typeof schemaDesaKelurahan>;
+export type DesaKelurahan = {
+  kode_provinsi: string;
+  kode_kabupaten_kota: string;
+  kode_kecamatan: string;
+  kode_desa_kelurahan: string;
+  nama_desa_kelurahan: string;
+}[];
