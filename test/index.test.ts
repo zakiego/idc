@@ -8,12 +8,21 @@ import {
 describe("provinsi", () => {
   test("all", () => {
     const data = getListProvinsi();
+    expect(data).toHaveLength(38);
     expect(data[0]).toHaveProperty("kode_provinsi");
     expect(data[0]).toHaveProperty("nama_provinsi");
   });
 });
 
 describe("kabupaten", () => {
+  // test("all", () => {
+  //   const data = getListKabupatenKota();
+  //   expect(data).toHaveLength(416);
+  //   expect(data[0]).toHaveProperty("kode_provinsi");
+  //   expect(data[0]).toHaveProperty("kode_kabupaten_kota");
+  //   expect(data[0]).toHaveProperty("nama_kabupaten_kota");
+  // });
+
   test("by kode_provinsi", () => {
     const data = getListKabupatenKota({ kode_provinsi: "11" });
     expect(data[0]).toHaveProperty("kode_provinsi");
