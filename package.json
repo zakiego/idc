@@ -1,7 +1,9 @@
 {
   "name": "indonesia-code",
   "version": "0.0.1",
-  "private": "false",
+  "publishConfig": {
+    "access": "public"
+  },
   "description": "A simple library to get Indonesia's province, city, and district code",
   "keywords": ["indonesia", "code", "province", "city", "district"],
   "author": {
