@@ -9,10 +9,10 @@
     "url": "https://zakiego.com"
   },
   "scripts": {
+    "build": "bunchee --no-external",
     "pull": "NODE_TLS_REJECT_UNAUTHORIZED=0 tsx src/data/pull.ts",
     "test": "vitest"
   },
-  "type": "module",
   "files": ["dist"],
   "main": "./dist/cjs/index.js",
   "module": "./dist/es/index.mjs",

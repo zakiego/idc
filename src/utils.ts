@@ -17,10 +17,10 @@ export const saveData = async (file: string, data: unknown) => {
 };
 
 type LoadData = {
-  <T>(file: string, schema: z.ZodType<T>): T;
+  <T>(file: unknown, schema: z.ZodType<T>): T;
 };
 
-export const loadData: LoadData = (file: string, schema: ZodSchema) => {
-  const data = fs.readFileSync(`src/data/${file}`, "utf-8");
-  return schema.parse(JSON.parse(data));
+export const loadData: LoadData = (file, schema) => {
+  const data = schema.parse(file);
+  return data;
 };
