@@ -11,7 +11,9 @@
   "scripts": {
     "build": "bunchee --no-external",
     "pull": "NODE_TLS_REJECT_UNAUTHORIZED=0 tsx src/data/pull.ts",
-    "test": "vitest"
+    "test": "vitest",
+    "release:add": "changeset",
+    "release:publish": "changeset publish"
   },
   "files": ["dist"],
   "main": "./dist/cjs/index.js",
@@ -39,5 +41,8 @@
     "vite-tsconfig-paths": "^4.3.1",
     "vitest": "^1.2.2",
     "zod": "^3.22.4"
+  },
+  "dependencies": {
+    "@changesets/cli": "^2.27.1"
   }
 }
